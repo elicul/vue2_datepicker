@@ -225,7 +225,7 @@ export default {
         }, {
           text: 'Yesterday',
           start: new Date(Date.now() - 3600 * 1000 * 24),
-          end: new Date()
+          end: new Date(Date.now() - 3600 * 1000 * 24)
         }, {
           text: 'Last 7 days',
           start: new Date(Date.now() - 3600 * 1000 * 24 * 7),

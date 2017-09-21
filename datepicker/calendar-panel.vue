@@ -44,8 +44,8 @@ export default {
     return {
       months: translation.months,
       dates: [],
-      now: new Date(), // calendar-header 显示的时间, 用于切换日历
-      years: [], // 年代面板
+      now: new Date(),
+      years: [], 
       currentPanel: 'date'
     }
   },
@@ -84,10 +84,9 @@ export default {
       now.setDate(1)
       this.now = now
     },
-    // 更新面板选择时间
     updateCalendar () {
       function getCalendar (time, firstday, length, classes) {
-        return Array.apply(null, { length }).map((v, i) => { // eslint-disable-line
+        return Array.apply(null, { length }).map((v, i) => { 
           let day = firstday + i
           const date = new Date(time.getFullYear(), time.getMonth(), day, 0, 0, 0)
           return {
@@ -143,7 +142,6 @@ export default {
         classes.push('today')
       }
 
-      // range classes
       if (cellTime === curTime) {
         classes.push('current')
       } else if (startTime) {
