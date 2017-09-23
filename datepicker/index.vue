@@ -11,25 +11,14 @@
         <!--<div class="datepicker-top" v-if="ranges.length">
           <span v-for="range in ranges" @click="selectRange(range)">{{range.text}}</span>
         </div>-->
-        <div class="container">
-          <div class="row">
-            <div class="col-4">
-              <calendar-panel style="box-shadow:1px 0 rgba(0, 0, 0, .1)" v-model="currentValue[0]" :end-at="currentValue[1]" :show="showPopup"></calendar-panel>
-            </div>
-            <div class="col-4">
-              <calendar-panel v-model="currentValue[1]" :start-at="currentValue[0]" :show="showPopup"></calendar-panel>
-
-            </div>
-            <div class="col-4">
-              <div class="datepicker-left" v-if="ranges.length">
-                <button v-for="range in ranges" @click="selectRange(range)" type="button" class="btn btn-sm btn-primary" style="display: block;margin: 5px;width: 100%;">
-                  {{range.text}}
-                </button>
-                <button type="button" class="btn btn-sm btn-success" style="margin: 5px;" @click="closePopup">Apply</button>
-                <button type="button" class="btn btn-sm btn-secondary" style="margin: 5px;" @click="clickCancel">Cancel</button>
-              </div>
-            </div>
-          </div>
+        <calendar-panel style="width: 35%; box-shadow:1px 0 rgba(0, 0, 0, .1)" v-model="currentValue[0]" :end-at="currentValue[1]" :show="showPopup"></calendar-panel>
+        <calendar-panel style="width: 35%; box-shadow:1px 0 rgba(0, 0, 0, .1)" v-model="currentValue[1]" :start-at="currentValue[0]" :show="showPopup"></calendar-panel>
+        <div class="datepicker-left" style="width: 25%;float: left;margin-top: 20px;" v-if="ranges.length">
+          <button v-for="range in ranges" @click="selectRange(range)" type="button" class="btn btn-sm btn-primary" style="display: block;margin: 10px;width: 100%;">
+            {{range.text}}
+          </button>
+          <button type="button" class="btn btn-sm btn-success" style="margin: 10px;" @click="closePopup">Apply</button>
+          <button type="button" class="btn btn-sm btn-secondary" style="margin: 10px;" @click="clickCancel">Cancel</button>
         </div>
       </template>
     </div>
@@ -58,7 +47,7 @@ export default {
     placeholder: String,
     lang: {
       type: String,
-      default: 'zh'
+      default: 'en'
     },
     value: null,
     shortcuts: {

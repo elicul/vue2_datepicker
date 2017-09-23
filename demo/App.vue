@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="demo">
-      <date-picker v-model="value" range lang="en"></date-picker>
+      <date-picker v-model="value" range></date-picker>
     </div>
   </div>
 </template>
